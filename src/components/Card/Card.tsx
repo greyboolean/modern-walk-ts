@@ -1,6 +1,18 @@
 import styles from "./Card.module.css";
 
-function Card({ product }) {
+interface Product {
+	title: string;
+	image: string;
+	price: number;
+	description: string;
+	category: string;
+}
+
+type CardProps = {
+	product: Product;
+};
+
+function Card({ product }: CardProps) {
 	const { title, image, price, description, category } = product;
 
 	return (
@@ -16,11 +28,14 @@ function Card({ product }) {
 				<img className={styles.image} src={image} alt={title} />
 			</div>
 			<div className={styles.content}>
-				<div className={styles.price}><span>Rs&nbsp;</span><span>{price}</span></div>
+				<div className={styles.price}>
+					<span>Rs&nbsp;</span>
+					<span>{price}</span>
+				</div>
 				<p
 					className={`${styles.description} ${styles.descriptionShorten}`}
 				>
-					{description.replace(/(,|\/)(\S)/g, '$1 $2')}
+					{description.replace(/(,|\/)(\S)/g, "$1 $2")}
 				</p>
 			</div>
 		</div>
