@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import { toTitleCase } from "../../utils/utils";
 import styles from "./CategoryCard.module.css";
 
-function CategoryCard({ category }) {
+type CategoryCardProps = {
+	category: string,
+};
+
+function CategoryCard({ category }: CategoryCardProps) {
 	return (
 		<div className={`${styles.category} ${styles[category]}`}>
 			<Link to={`/${category}s-clothing`}>
