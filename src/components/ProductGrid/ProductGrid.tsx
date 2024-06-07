@@ -1,7 +1,20 @@
 import Card from "../Card/Card";
 import styles from "./ProductGrid.module.css";
 
-function ProductGrid({ products }) {
+interface Product {
+	id: number;
+	title: string;
+	price: number;
+	category: string;
+	description: string;
+	image: string;
+}
+
+type ProductGridProps = {
+	products: Product[];
+}
+
+function ProductGrid({ products }: ProductGridProps) {
 	return (
 		<div className={styles.grid}>
 			{products.map((product) => (
