@@ -1,11 +1,12 @@
 import styles from "./Card.module.css";
 
 interface Product {
+	id: number;
 	title: string;
-	image: string;
 	price: number;
-	description: string;
 	category: string;
+	description: string;
+	image: string;
 }
 
 type CardProps = {
