@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { getProductsByCategory, getAllProducts } from "../api/products";
+import { getProductsByCategory, getAllProducts } from "../services/products";
+import { Product } from "../types/product";
 
-function useProducts(category) {
-	const [products, setProducts] = useState([]);
+function useProducts(category?: string) {
+	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
