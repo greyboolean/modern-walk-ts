@@ -1,13 +1,5 @@
+import { Product } from "../../types/product";
 import styles from "./Card.module.css";
-
-interface Product {
-	id: number;
-	title: string;
-	price: number;
-	category: string;
-	description: string;
-	image: string;
-}
 
 type CardProps = {
 	product: Product;

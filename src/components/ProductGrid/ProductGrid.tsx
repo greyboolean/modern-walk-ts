@@ -1,14 +1,6 @@
 import Card from "../Card/Card";
+import { Product } from "../../types/product";
 import styles from "./ProductGrid.module.css";
-
-interface Product {
-	id: number;
-	title: string;
-	price: number;
-	category: string;
-	description: string;
-	image: string;
-}
 
 type ProductGridProps = {
 	products: Product[];
