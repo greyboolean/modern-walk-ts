@@ -1,5 +1,5 @@
-import Header from "../components/organisms/Header/Header.component";
-import OutletContainer from "../components/organisms/OutletContainer/OutletContainer.component";
+import { Header } from "../components";
+import { OutletContainer } from "../components";
 
 function Layout() {
 	return (

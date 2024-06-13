@@ -1,4 +1,4 @@
-import CategoryCard from "../../molecules/CategoryCard/CategoryCard.component";
+import { CategoryCard } from "../../molecules";
 import styles from "./CategoryGrid.module.css";
 
 function CategoryGrid() {

@@ -1,4 +1,4 @@
-import Loading from "../../atoms/Loading/Loading.component";
+import { Loading } from "../../atoms";
 import styles from "./Section.module.css";
 import { SectionProps } from "./Section.types";
 

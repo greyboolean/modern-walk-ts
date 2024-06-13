@@ -1,4 +1,4 @@
-import Card from "../../molecules/ProductCard/ProductCard.component";
+import { ProductCard } from "../../molecules";
 import styles from "./ProductGrid.module.css";
 import { ProductGridProps } from "./ProductGrid.types";
 
@@ -6,7 +6,7 @@ function ProductGrid({ products }: ProductGridProps) {
 	return (
 		<div className={styles.grid}>
 			{products.map((product) => (
-				<Card key={product.id} product={product} />
+				<ProductCard key={product.id} product={product} />
 			))}
 		</div>
 	);

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./ui-core/layouts/Layout";
+import { Layout } from "./ui-core";
 import { Home } from "./ui-core";
 import { Clothing } from "./ui-core";
 import "./App.css";
