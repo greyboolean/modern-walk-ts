@@ -1,16 +1,12 @@
-import Card from "../Card/Card";
-import { Product } from "../../types/product";
+import { ProductCard } from "../../molecules";
 import styles from "./ProductGrid.module.css";
-
-type ProductGridProps = {
-	products: Product[];
-}
+import { ProductGridProps } from "./ProductGrid.types";
 
 function ProductGrid({ products }: ProductGridProps) {
 	return (
 		<div className={styles.grid}>
 			{products.map((product) => (
-				<Card key={product.id} product={product} />
+				<ProductCard key={product.id} product={product} />
 			))}
 		</div>
 	);

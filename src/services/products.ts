@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Product } from "../types/product";
+import { Product } from "../models/product";
 
 export const getAllProducts = async (): Promise<Product[] | null> => {
 	try {

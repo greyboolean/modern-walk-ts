@@ -1,12 +1,6 @@
-import { ReactNode } from "react";
-import Loading from "../Loading/Loading";
+import { Loading } from "../../atoms";
 import styles from "./Section.module.css";
-
-type SectionProps = {
-	heading: string;
-	loading?: boolean;
-	children: ReactNode
-}
+import { SectionProps } from "./Section.types";
 
 function Section({ heading, loading, children }: SectionProps) {
 	return (

@@ -1,5 +1,5 @@
-import Header from "../Header/Header";
-import OutletContainer from "../OutletContainer/OutletContainer";
+import { Header } from "../components";
+import { OutletContainer } from "../components";
 
 function Layout() {
 	return (

@@ -1,7 +1,7 @@
-import useProducts from "../hooks/useProducts";
-import Section from "../components/Section/Section";
-import ProductGrid from "../components/ProductGrid/ProductGrid";
-import CategoryGrid from "../components/CategoryGrid/CategoryGrid";
+import useProducts from "../../../../hooks/useProducts";
+import { Section } from "../../../components";
+import { ProductGrid } from "../../../components";
+import { CategoryGrid } from "../../../components";
 
 function Home() {
 	const { products, loading } = useProducts();

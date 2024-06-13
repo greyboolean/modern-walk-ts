@@ -1,11 +1,7 @@
-import { Product } from "../../types/product";
-import styles from "./Card.module.css";
+import styles from "./ProductCard.module.css";
+import { ProductCardProps } from "./ProductCard.types";
 
-type CardProps = {
-	product: Product;
-};
-
-function Card({ product }: CardProps) {
+function ProductCard({ product }: ProductCardProps) {
 	const { title, image, price, description, category } = product;
 
 	return (
@@ -35,4 +31,4 @@ function Card({ product }: CardProps) {
 	);
 }
 
-export default Card;
+export default ProductCard;

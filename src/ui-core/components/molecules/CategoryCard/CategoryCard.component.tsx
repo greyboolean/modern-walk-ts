@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-import { toTitleCase } from "../../utils/utils";
+import { toTitleCase } from "../../../../utils/utils";
 import styles from "./CategoryCard.module.css";
-
-type CategoryCardProps = {
-	category: string,
-};
+import { CategoryCardProps } from "./CategoryCard.types";
 
 function CategoryCard({ category }: CategoryCardProps) {
 	return (
