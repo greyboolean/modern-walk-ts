@@ -1,4 +1,4 @@
-import Card from "../../../../components/Card/Card";
+import Card from "../../molecules/ProductCard/ProductCard.component";
 import styles from "./ProductGrid.module.css";
 import { ProductGridProps } from "./ProductGrid.types";
 
