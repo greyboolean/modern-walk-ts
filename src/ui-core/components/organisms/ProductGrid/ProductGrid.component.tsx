@@ -1,6 +1,6 @@
 import { ProductCard } from "../../molecules";
-import styles from "./ProductGrid.module.css";
 import { ProductGridProps } from "./ProductGrid.types";
+import styles from "./ProductGrid.module.css";
 
 function ProductGrid({ products }: ProductGridProps) {
 	return (
