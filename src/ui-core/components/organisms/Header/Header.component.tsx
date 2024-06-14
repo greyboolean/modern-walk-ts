@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
-import styles from "./Header.module.css";
+import { Brand } from "../../molecules/Brand";
 import { Navbar } from "../../molecules/Navbar";
+import styles from "./Header.module.css";
 
 function Header() {
 	return (
 		<header className={styles.header}>
-			<Link to="/" className={styles.brand}>
-				<div className={styles.brandText}>Modern Walk</div>
-			</Link>
+			<Brand />
 			<Navbar />
 		</header>
 	);

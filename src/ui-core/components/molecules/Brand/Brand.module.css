@@ -1,0 +1,9 @@
+.brand {
+	grid-column: 2;
+}
+
+.brandText {
+	font-weight: 700;
+	font-size: 3.5rem;
+	color: #0e0e0e;
+}
