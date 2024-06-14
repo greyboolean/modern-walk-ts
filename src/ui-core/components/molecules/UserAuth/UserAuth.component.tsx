@@ -4,14 +4,14 @@ import {
 	SignedOut,
 	UserButton,
 } from "@clerk/clerk-react";
-import styles from "./UserAuth.module.css";
+import { Button } from "../../atoms/Button";
 
 export function UserAuth() {
 	return (
 		<div>
 			<SignedOut>
 				<SignInButton>
-					<button className={styles.signInButton}>Sign In</button>
+					<Button>Sign in</Button>
 				</SignInButton>
 			</SignedOut>
 			<SignedIn>
