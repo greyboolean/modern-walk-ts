@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import { UserAuth } from "../../molecules/UserAuth";
+import { Navbar } from "../../molecules/Navbar";
 
 function Header() {
 	return (
@@ -8,9 +8,7 @@ function Header() {
 			<Link to="/" className={styles.brand}>
 				<div className={styles.brandText}>Modern Walk</div>
 			</Link>
-			<nav className={styles.nav}>
-				<UserAuth />
-			</nav>
+			<Navbar />
 		</header>
 	);
 }

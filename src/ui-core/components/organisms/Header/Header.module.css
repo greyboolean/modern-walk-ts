@@ -32,9 +32,3 @@
 	font-size: 3.5rem;
 	color: #0e0e0e;
 }
-
-.nav {
-	grid-column: 3;
-	display: flex;
-	justify-content: end;
-}
