@@ -3,6 +3,7 @@ import { Layout } from "./ui-core";
 import { Home } from "./ui-core";
 import { Clothing } from "./ui-core";
 import "./App.css";
+import { Watchlist } from "./ui-core";
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 						path="womens-clothing"
 						element={<Clothing category="women" />}
 					/>
+					<Route path="watchlist" element={<Watchlist />} />
 				</Route>
 			</Routes>
 		</Router>

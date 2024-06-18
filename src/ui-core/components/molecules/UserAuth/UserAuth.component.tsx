@@ -11,7 +11,7 @@ export function UserAuth() {
 		<div>
 			<SignedOut>
 				<SignInButton>
-					<Button>Sign in</Button>
+					<Button>Sign In</Button>
 				</SignInButton>
 			</SignedOut>
 			<SignedIn>
