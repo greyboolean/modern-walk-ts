@@ -1,5 +1,5 @@
-import styles from "./ProductCard.module.css";
 import { ProductCardProps } from "./ProductCard.types";
+import styles from "./ProductCard.module.css";
 
 function ProductCard({ product }: ProductCardProps) {
 	const { title, image, price, description, category } = product;

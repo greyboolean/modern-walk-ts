@@ -1,4 +1,4 @@
-.brand {
+/* .brand {
 	font-weight: 700;
 	font-size: 3.5rem;
 	color: #0e0e0e;
@@ -11,5 +11,14 @@
 	padding: 1rem 2rem;
 	background-color: #f5f5f5;
 	position: relative;
+	border-bottom: 4px solid #d9d9d9;
+} */
+
+.header {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: #f5f5f5;
 	border-bottom: 4px solid #d9d9d9;
 }

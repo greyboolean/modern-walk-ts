@@ -1,11 +1,10 @@
-import { Header } from "../components";
-import { OutletContainer } from "../components";
+import { Header, Main } from "../components";
 
 function Layout() {
 	return (
 		<div>
 			<Header />
-			<OutletContainer />
+			<Main />
 		</div>
 	);
 }

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { toTitleCase } from "../../../../utils/utils";
-import styles from "./CategoryCard.module.css";
 import { CategoryCardProps } from "./CategoryCard.types";
+import styles from "./CategoryCard.module.css";
 
 function CategoryCard({ category }: CategoryCardProps) {
 	return (

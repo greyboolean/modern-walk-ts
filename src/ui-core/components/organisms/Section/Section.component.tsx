@@ -1,6 +1,6 @@
 import { Loading } from "../../atoms";
-import styles from "./Section.module.css";
 import { SectionProps } from "./Section.types";
+import styles from "./Section.module.css";
 
 function Section({ heading, loading, children }: SectionProps) {
 	return (
