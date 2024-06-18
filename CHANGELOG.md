@@ -1,5 +1,11 @@
 # modern-walk-ts
 
+## 0.3.0
+
+### Minor Changes
+
+- 3e7b24d: Set up user authentication using Clerk including sign in, sign out and user button
+
 ## 0.2.0
 
 ### Minor Changes
