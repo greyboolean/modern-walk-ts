@@ -2,6 +2,7 @@ import { useAuth, useClerk } from "@clerk/clerk-react";
 import { useProduct } from "../../../../context/productContext";
 import { Button } from "../../atoms/Button";
 import { ProductCardProps } from "./ProductCard.types";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import styles from "./ProductCard.module.css";
 // import { useNavigate } from "react-router-dom";
 
@@ -44,9 +45,12 @@ function ProductCard({ product }: ProductCardProps) {
 					{description.replace(/(,|\/)(\S)/g, "$1 $2")}
 				</p>
 				<Button onClick={handleWatchlistClick}>
-					{isInProductsList(product)
+					{/* {isInProductsList(product)
 						? "Remove from Watchlist"
-						: "Add to Watchlist"}
+						: "Add to Watchlist"} */}
+					{isInProductsList(product)
+						? <FaHeart />
+						: <FaRegHeart />}
 				</Button>
 			</div>
 		</div>
