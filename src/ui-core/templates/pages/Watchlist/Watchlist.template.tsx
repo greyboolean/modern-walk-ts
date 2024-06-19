@@ -1,14 +1,13 @@
-import { useProduct } from "../../../../context/productContext";
+import { useWatchlist } from "../../../../context/watchlistContext";
 import { ProductGrid, Section } from "../../../components";
 
 function Watchlist() {
-	const { products } = useProduct();
-  console.log(products);
+	const { watchlist } = useWatchlist();
 
 	return (
 		<div>
 			<Section heading="Watchlist">
-				<ProductGrid products={products} />
+				<ProductGrid products={watchlist} />
 			</Section>
 		</div>
 	);

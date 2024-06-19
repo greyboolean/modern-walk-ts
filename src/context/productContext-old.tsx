@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
 	ProductContextType,
 	ProductProviderProps,
-} from "./productContext.types";
+} from "./watchlistContext.types";
 import { Product } from "../models/product";
 import { useUser } from "@clerk/clerk-react";
 
