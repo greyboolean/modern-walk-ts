@@ -1,26 +1,42 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
 	ProductContextType,
 	ProductProviderProps,
 } from "./productContext.types";
 import { Product } from "../models/product";
-import useLocalStorage from "../hooks/useLocalStorage";
+import { useUser } from "@clerk/clerk-react";
 
 const ProductContext = createContext<ProductContextType | null>(null);
 
 function ProductProvider({ children }: ProductProviderProps) {
-	const [products, setProducts] = useLocalStorage<Product[]>("products", []);
+	const { user, isLoaded } = useUser();
+	const [products, setProducts] = useState<Product[]>([]);
+
+	useEffect(() => {
+		if (isLoaded && user) {
+			const storedProducts = localStorage.getItem(`${user.id}`);
+			if (storedProducts) {
+				setProducts(JSON.parse(storedProducts));
+			}
+		}
+	}, [isLoaded, user]);
+
+	useEffect(() => {
+		if (user) {
+			localStorage.setItem(`${user.id}`, JSON.stringify(products));
+		}
+	}, [products, user]);
 
 	function addProduct(product: Product) {
 		setProducts([...products, product]);
 	}
 
 	function removeProduct(product: Product) {
-		setProducts(products.filter((p: Product) => p.id !== product.id));
+		setProducts(products.filter((p) => p.id !== product.id));
 	}
 
 	function isInProductsList(product: Product) {
-		return products.some((p: Product) => p.id === product.id);
+		return products.some((p) => p.id === product.id);
 	}
 
 	function toggleProduct(product: Product) {
@@ -34,7 +50,11 @@ function ProductProvider({ children }: ProductProviderProps) {
 
 	return (
 		<ProductContext.Provider
-			value={{ products, /* addProduct, removeProduct,*/ isInProductsList, toggleProduct }}
+			value={{
+				products,
+				/* addProduct, removeProduct,*/ isInProductsList,
+				toggleProduct,
+			}}
 		>
 			{children}
 		</ProductContext.Provider>
