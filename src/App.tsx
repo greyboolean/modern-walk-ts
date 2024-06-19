@@ -1,9 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Layout } from "./ui-core";
-import { Home } from "./ui-core";
-import { Clothing } from "./ui-core";
+import { Layout, Home, Clothing, Watchlist } from "./ui-core";
 import "./App.css";
-import { Watchlist } from "./ui-core";
 
 function App() {
 	return (

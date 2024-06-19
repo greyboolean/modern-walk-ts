@@ -1,5 +1,5 @@
-import { useUser } from "@clerk/clerk-react";
 import { useState, useEffect } from "react";
+import { useUser } from "@clerk/clerk-react";
 
 function useLocalStorage<T>(key: string, initialState: T): [T, React.Dispatch<React.SetStateAction<T>>] {
 	const { user, isLoaded } = useUser();

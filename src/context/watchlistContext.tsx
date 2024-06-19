@@ -1,10 +1,10 @@
 import { createContext, useContext } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { Product } from "../models/product";
 import {
 	WatchlistContextType,
 	WatchlistProviderProps,
 } from "./watchlistContext.types";
-import { Product } from "../models/product";
-import useLocalStorage from "../hooks/useLocalStorage";
 
 const WatchlistContext = createContext<WatchlistContextType | null>(null);
 
