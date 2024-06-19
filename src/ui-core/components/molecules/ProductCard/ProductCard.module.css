@@ -73,3 +73,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.content button {
+	margin-top: 1rem;
+}

@@ -1,8 +1,26 @@
+import { useAuth, useClerk } from "@clerk/clerk-react";
+import { useWatchlist } from "../../../../context/watchlistContext";
+import { Button } from "../../atoms/Button";
 import { ProductCardProps } from "./ProductCard.types";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import styles from "./ProductCard.module.css";
+// import { useNavigate } from "react-router-dom";
 
 function ProductCard({ product }: ProductCardProps) {
 	const { title, image, price, description, category } = product;
+	const { toggleProduct, isInWatchlist } = useWatchlist();
+	const { isSignedIn } = useAuth();
+	const { redirectToSignIn } = useClerk();
+	// const navigate = useNavigate();
+
+	const handleWatchlistClick = () => {
+		if (isSignedIn) {
+			toggleProduct(product);
+		} else {
+			// navigate("/sign-in");
+			redirectToSignIn();
+		}
+	}
 
 	return (
 		<div
@@ -26,6 +44,14 @@ function ProductCard({ product }: ProductCardProps) {
 				>
 					{description.replace(/(,|\/)(\S)/g, "$1 $2")}
 				</p>
+				<Button onClick={handleWatchlistClick}>
+					{/* {isInProductsList(product)
+						? "Remove from Watchlist"
+						: "Add to Watchlist"} */}
+					{isInWatchlist(product)
+						? <FaHeart />
+						: <FaRegHeart />}
+				</Button>
 			</div>
 		</div>
 	);
