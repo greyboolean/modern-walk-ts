@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
-import { Product } from "../models/product";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import { Product } from "../../models/product";
 import {
 	WatchlistContextType,
 	WatchlistProviderProps,
@@ -9,7 +9,10 @@ import {
 const WatchlistContext = createContext<WatchlistContextType | null>(null);
 
 function WatchlistProvider({ children }: WatchlistProviderProps) {
-	const [watchlist, setWatchlist] = useLocalStorage<Product[]>("watchlist", []);
+	const [watchlist, setWatchlist] = useLocalStorage<Product[]>(
+		"watchlist",
+		[]
+	);
 
 	function addProduct(product: Product) {
 		setWatchlist([...watchlist, product]);

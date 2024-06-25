@@ -5,7 +5,7 @@ import "./index.css";
 import { ClerkProvider } from "@clerk/clerk-react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { WatchlistProvider } from "./context/watchlistContext.tsx";
+import { WatchlistProvider } from "./context/watchlist/watchlistContext.tsx";
 
 // Import publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;

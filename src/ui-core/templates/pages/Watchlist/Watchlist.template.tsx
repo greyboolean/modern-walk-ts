@@ -1,4 +1,4 @@
-import { useWatchlist } from "../../../../context/watchlistContext";
+import { useWatchlist } from "../../../../context/watchlist/watchlistContext";
 import { ProductGrid, Section } from "../../../components";
 
 function Watchlist() {

@@ -1,5 +1,5 @@
 import { useAuth, useClerk } from "@clerk/clerk-react";
-import { useWatchlist } from "../../../../context/watchlistContext";
+import { useWatchlist } from "../../../../context/watchlist/watchlistContext";
 import { Button } from "../../atoms/Button";
 import { ProductCardProps } from "./ProductCard.types";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
@@ -20,7 +20,7 @@ function ProductCard({ product }: ProductCardProps) {
 			// navigate("/sign-in");
 			redirectToSignIn();
 		}
-	}
+	};
 
 	return (
 		<div
@@ -48,9 +48,7 @@ function ProductCard({ product }: ProductCardProps) {
 					{/* {isInProductsList(product)
 						? "Remove from Watchlist"
 						: "Add to Watchlist"} */}
-					{isInWatchlist(product)
-						? <FaHeart />
-						: <FaRegHeart />}
+					{isInWatchlist(product) ? <FaHeart /> : <FaRegHeart />}
 				</Button>
 			</div>
 		</div>
