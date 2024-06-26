@@ -1,9 +1,10 @@
 import { useCart } from "../../../../context/cart/cartContext";
+import { CartItemProps } from "./CartItem.types";
 import styles from "./CartItem.module.css";
 
-function CartItem({ cartItem }) {
+function CartItem({ cartItem }: CartItemProps) {
 	const { product, quantity } = cartItem;
-	const { isInCart, removeItem, incrementCartItem, decrementCartItem } =
+	const { isInCart, removeCartItem, incrementCartItem, decrementCartItem } =
 		useCart();
 
 	return (
@@ -24,7 +25,7 @@ function CartItem({ cartItem }) {
 							+
 						</button>
 					</div>
-					<button onClick={() => removeItem(product)}>Remove</button>
+					<button onClick={() => removeCartItem(product)}>Remove</button>
 				</div>
 			</div>
 		</div>

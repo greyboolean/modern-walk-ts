@@ -47,57 +47,51 @@ function CartProvider({ children }: CartProviderProps) {
   }
   */
 
-  function addItem(product: Product) {
-    setCart(Items => {
-      if (isInCart(product)) {
-        return [...Items, { product, quantity: 1 }];
-      } else {
-        return Items;
-      }
-    });
+  function addCartItem(product: Product) {
+    setCart(cart => [...cart, { product, quantity: 1 }]);
   }
 
-  function removeItem(product: Product) {
-    setCart(Items => Items.filter(item => item.product.id !== product.id));
+  function removeCartItem(product: Product) {
+    setCart(cart => cart.filter(cartItem => cartItem.product.id !== product.id));
   }
 
   function isInCart(product: Product) {
-    return cart.some(item => item.product.id === product.id);
+    return cart.some(cartItem => cartItem.product.id === product.id);
   }
 
   function toggleCartItem(product: Product) {
     if (isInCart(product)) {
-      removeItem(product);
+      removeCartItem(product);
     } else {
-      addItem(product);
+      addCartItem(product);
     }
   }
 
   function incrementCartItem(product: Product) {
-    setCart(Items => {
-      return Items.map(item => {
-        if (item.product.id === product.id) {
-          return { ...item, quantity: item.quantity + 1 };
+    setCart(cart => {
+      return cart.map(cartItem => {
+        if (cartItem.product.id === product.id) {
+          return { ...cartItem, quantity: cartItem.quantity + 1 };
         }
-        return item;
+        return cartItem;
       });
     });
   }
 
   function decrementCartItem(product: Product) {
-    setCart(Items => {
-      return Items.map(item => {
-        if (item.product.id === product.id) {
-          const newQuantity = item.quantity - 1;
-          return { ...item, quantity: newQuantity >= 1 ? newQuantity : 1 };
+    setCart(cart => {
+      return cart.map(cartItem => {
+        if (cartItem.product.id === product.id) {
+          const newQuantity = cartItem.quantity - 1;
+          return { ...cartItem, quantity: newQuantity >= 1 ? newQuantity : 1 };
         }
-        return item;
+        return cartItem;
       });
     });
   }
 
   return (
-    <CartContext.Provider value={{ cart, removeItem, isInCart, toggleCartItem, incrementCartItem, decrementCartItem }}>
+    <CartContext.Provider value={{ cart, removeCartItem, isInCart, toggleCartItem, incrementCartItem, decrementCartItem }}>
       {children}
     </CartContext.Provider>
   );
