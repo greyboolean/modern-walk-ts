@@ -1,3 +1,4 @@
+export * from "./Cart";
 export * from "./CategoryGrid";
 export * from "./Header";
 export * from "./Main";
