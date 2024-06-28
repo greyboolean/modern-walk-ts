@@ -23,7 +23,7 @@ function Navbar() {
 			</SignedIn>
 			<Button onClick={toggleCart}><BsCartFill /></Button>
 			<UserAuth />
-			{isCartOpen && <Cart />}
+			<Cart onClose={toggleCart} isOpen={isCartOpen} />
 		</nav>
 	);
 }

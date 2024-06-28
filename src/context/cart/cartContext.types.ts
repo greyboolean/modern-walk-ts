@@ -7,12 +7,13 @@ export type CartItem = {
 
 export type CartContextType = {
   cart: CartItem[];
-  /*addItem: (product: Product) => void;*/
+  addCartItem: (product: Product) => void;
   removeCartItem: (product: Product) => void;
   isInCart: (product: Product) => boolean;
   toggleCartItem: (product: Product) => void;
   incrementCartItem: (product: Product) => void;
   decrementCartItem: (product: Product) => void;
+  clearCart: () => void;
 };
 
 export type CartProviderProps = {

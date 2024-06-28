@@ -55,7 +55,7 @@ function ProductCard({ product }: ProductCardProps) {
 				>
 					{description.replace(/(,|\/)(\S)/g, "$1 $2")}
 				</p>
-				<div>
+				<div className={styles.actions}>
 					<Button onClick={handleWatchlistClick}>
 						{/* {isInProductsList(product)
 						? "Remove from Watchlist"

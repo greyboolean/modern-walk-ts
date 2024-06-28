@@ -78,6 +78,10 @@ function CartProvider({ children }: CartProviderProps) {
     });
   }
 
+  function clearCart() {
+    setCart([]);
+  }
+
   function decrementCartItem(product: Product) {
     setCart(cart => {
       return cart.map(cartItem => {
@@ -91,7 +95,7 @@ function CartProvider({ children }: CartProviderProps) {
   }
 
   return (
-    <CartContext.Provider value={{ cart, removeCartItem, isInCart, toggleCartItem, incrementCartItem, decrementCartItem }}>
+    <CartContext.Provider value={{ cart, addCartItem, removeCartItem, isInCart, toggleCartItem, incrementCartItem, decrementCartItem, clearCart }}>
       {children}
     </CartContext.Provider>
   );

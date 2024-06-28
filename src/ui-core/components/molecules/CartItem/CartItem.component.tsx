@@ -1,6 +1,8 @@
 import { useCart } from "../../../../context/cart/cartContext";
 import { CartItemProps } from "./CartItem.types";
 import styles from "./CartItem.module.css";
+import { BsDash, BsPlus, BsX } from "react-icons/bs";
+import { Button } from "../../atoms/Button";
 
 function CartItem({ cartItem }: CartItemProps) {
 	const { product, quantity } = cartItem;
@@ -10,22 +12,22 @@ function CartItem({ cartItem }: CartItemProps) {
 	return (
 		<div>
 			<div className={styles.cartItem}>
-				<div>
-					<img src={product.image} alt={product.title} />
-					<h3>{product.title}</h3>
-					<p>{product.price}</p>
+				<div className={styles.content}>
+					<img className={styles.image} src={product.image} alt={product.title} />
+					<h3 className={styles.title}>{product.title}</h3>
+					<p className={styles.price}>Rs&nbsp;{(product.price * quantity).toFixed(2)}</p>
 				</div>
-				<div>
-					<div>
-						<button onClick={() => decrementCartItem(product)}>
-							-
-						</button>
+				<div className={styles.actions}>
+					<div className={styles.quantity}>
+						<Button onClick={() => decrementCartItem(product)}>
+							<BsDash />
+						</Button>
 						<span>{quantity}</span>
-						<button onClick={() => incrementCartItem(product)}>
-							+
-						</button>
+						<Button onClick={() => incrementCartItem(product)}>
+							<BsPlus />
+						</Button>
 					</div>
-					<button onClick={() => removeCartItem(product)}>Remove</button>
+					<Button onClick={() => removeCartItem(product)}><BsX /></Button>
 				</div>
 			</div>
 		</div>
