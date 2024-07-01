@@ -1,12 +1,12 @@
 import { useCart } from "../../../../context/cart/cartContext";
+import { Button } from "../../atoms/Button";
+import { BsDash, BsPlus, BsX } from "react-icons/bs";
 import { CartItemProps } from "./CartItem.types";
 import styles from "./CartItem.module.css";
-import { BsDash, BsPlus, BsX } from "react-icons/bs";
-import { Button } from "../../atoms/Button";
 
 function CartItem({ cartItem }: CartItemProps) {
 	const { product, quantity } = cartItem;
-	const { isInCart, removeCartItem, incrementCartItem, decrementCartItem } =
+	const { removeCartItem, incrementCartItem, decrementCartItem } =
 		useCart();
 
 	return (

@@ -1,10 +1,10 @@
-import { useCart } from "../../../../context/cart/cartContext";
-import { Button } from "../../atoms/Button";
-import { CartItem } from "../../molecules";
-import { CartProps } from "./Cart.types";
-import { BsXCircle } from "react-icons/bs";
-import styles from "./Cart.module.css";
 import { useEffect, useRef } from "react";
+import { useCart } from "../../../../context/cart/cartContext";
+import { CartItem } from "../../molecules";
+import { Button } from "../../atoms/Button";
+import { BsXCircle } from "react-icons/bs";
+import { CartProps } from "./Cart.types";
+import styles from "./Cart.module.css";
 
 const Cart = ({ onClose, isOpen }: CartProps) => {
 	const { cart, clearCart } = useCart();

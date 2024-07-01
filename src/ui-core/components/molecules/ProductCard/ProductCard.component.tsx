@@ -2,10 +2,10 @@ import { useAuth, useClerk } from "@clerk/clerk-react";
 import { useWatchlist } from "../../../../context/watchlist/watchlistContext";
 import { useCart } from "../../../../context/cart/cartContext";
 import { Button } from "../../atoms/Button";
-import { ProductCardProps } from "./ProductCard.types";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
-import styles from "./ProductCard.module.css";
 import { BsCart, BsCartFill } from "react-icons/bs";
+import { ProductCardProps } from "./ProductCard.types";
+import styles from "./ProductCard.module.css";
 // import { useNavigate } from "react-router-dom";
 
 function ProductCard({ product }: ProductCardProps) {
