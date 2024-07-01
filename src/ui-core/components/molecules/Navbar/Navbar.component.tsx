@@ -18,10 +18,14 @@ function Navbar() {
 			<SignedIn>
 				<Link to="/watchlist">
 					{/* <Button>Watchlist</Button> */}
-					<Button><FaHeart /></Button>
+					<Button>
+						<FaHeart />
+					</Button>
 				</Link>
+				<Button onClick={toggleCart}>
+					<BsCartFill />
+				</Button>
 			</SignedIn>
-			<Button onClick={toggleCart}><BsCartFill /></Button>
 			<UserAuth />
 			<Cart onClose={toggleCart} isOpen={isCartOpen} />
 		</nav>
