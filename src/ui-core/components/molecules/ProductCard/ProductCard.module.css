@@ -73,3 +73,14 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.actions {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+/* removed from App.css and added here */
+.image {
+	height: 150px;
+}
